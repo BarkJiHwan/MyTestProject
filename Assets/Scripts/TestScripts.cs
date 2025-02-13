@@ -9,7 +9,6 @@ public class TestScripts : MonoBehaviour
     Vector3 Pos;
     Vector3 dir;
     Quaternion lookTarget;
-
     public float moveSpeed = 5f;
     bool isMoveable = false;
     void Update()
@@ -21,16 +20,13 @@ public class TestScripts : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100f))
             {
                 Debug.DrawRay(Camera.main.transform.position, ray.direction * 100.0f, Color.yellow, 1.0f); 
-                Pos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
-                Debug.Log(Pos);
-                dir = Pos - transform.position;
-                Debug.Log(dir);
+                Pos = new Vector3(hit.point.x, transform.position.y, hit.point.z);                
+                dir = Pos - transform.position;                
                 lookTarget = Quaternion.LookRotation(dir);
                 isMoveable = true;
             }
         }
-        Move();
-        
+        Move();        
     }
 
     void Move()
