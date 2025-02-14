@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine.Utility;
+using UnityEngine.Animations.Rigging;
+using Unity.VisualScripting;
 
 public class TestScripts : MonoBehaviour
 {
@@ -10,7 +12,11 @@ public class TestScripts : MonoBehaviour
     Vector3 dir;
     Quaternion lookTarget;
     public float moveSpeed = 5f;
-    bool isMoveable = false;
+    bool isMoveable = false;    
+
+    private void Start()
+    {
+    }
     void Update()
     {
         if(Input.GetMouseButton(1))
@@ -21,12 +27,12 @@ public class TestScripts : MonoBehaviour
             {
                 Debug.DrawRay(Camera.main.transform.position, ray.direction * 100.0f, Color.yellow, 1.0f); 
                 Pos = new Vector3(hit.point.x, transform.position.y, hit.point.z);                
-                dir = Pos - transform.position;                
+                dir = Pos - transform.position;
                 lookTarget = Quaternion.LookRotation(dir);
                 isMoveable = true;
             }
         }
-        Move();        
+        Move();
     }
 
     void Move()
