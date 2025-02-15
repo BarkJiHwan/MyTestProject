@@ -5,25 +5,18 @@ using UnityEngine.UIElements.Experimental;
 
 public class InventoryScript : MonoBehaviour
 {
-    public GameObject inven;
-    private float checkInterval = 0.1f; // 0.1√  ∞£∞›
+    public GameObject inven;    
 
     private void Start()
-    {        
+    {
         inven.SetActive(false);
-        InvokeRepeating("CheckKey", 0f, checkInterval);
     }
 
-    void CheckKey()
+    private void Update()
     {
-        if (Input.GetKey(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             inven.SetActive(!inven.activeSelf);
         }
-    }
-
-    void OnDisable()
-    {
-        CancelInvoke("CheckKey");
     }
 }

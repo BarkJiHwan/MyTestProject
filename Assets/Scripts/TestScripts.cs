@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using Cinemachine.Utility;
 using UnityEngine.Animations.Rigging;
 using Unity.VisualScripting;
+using System;
 
 public class TestScripts : MonoBehaviour
 {
@@ -19,54 +20,49 @@ public class TestScripts : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1))
+        {
+            OnMouseClick();
+        }
+        if (isMoveable)
+        {
+            Move();
+        }
+    }
+
+    void Move()
+    {
+
+        transform.position += dir.normalized * Time.deltaTime * moveSpeed;
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookTarget, 0.25f);
+        float dt = Vector3.Distance(transform.position, Pos);
+        if (dt <= 1f)
+        {
+            isMoveable = false;
+        }
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag == "Wall")
+        {
+            isMoveable = false ;
+        }
+    }
+    void OnMouseClick()
+    {
+        if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 100f))
             {
-                Debug.DrawRay(Camera.main.transform.position, ray.direction * 100.0f, Color.yellow, 1.0f); 
-                Pos = new Vector3(hit.point.x, transform.position.y, hit.point.z);                
+                Debug.DrawRay(Camera.main.transform.position, ray.direction * 100.0f, Color.yellow, 1.0f);
+                Pos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
                 dir = Pos - transform.position;
                 lookTarget = Quaternion.LookRotation(dir);
                 isMoveable = true;
             }
         }
-        Move();
     }
-
-    void Move()
-    {
-        if(isMoveable == true)
-        {
-            transform.position += dir.normalized * Time.deltaTime * moveSpeed;
-            transform.rotation = Quaternion.Lerp(transform.rotation, lookTarget, 0.25f);
-            float dt = Vector3.Distance(transform.position, Pos);
-            if (dt <= 1f)
-            {
-                 isMoveable = false;
-            }
-        }
-    }
-
-    //Transform tr;
-    //Vector3 moveDir;
-
-    //void OnMove(InputValue val)
-    //{
-    //    Vector2 dir = val.Get<Vector2>();
-    //    moveDir = new Vector3(dir.x,0, dir.y);
-    //}
-    //void OnAttack()
-    //{
-    //    Debug.Log("АјАн");
-    //}
-    //void Update()
-    //{
-    //    if (moveDir != Vector3.zero)
-    //    {
-    //        transform.rotation = Quaternion.LookRotation(moveDir);
-    //        transform.Translate(Vector3.forward * Time.deltaTime * 4.0f);
-    //    }
-    //}
 }

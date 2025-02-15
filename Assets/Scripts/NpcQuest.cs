@@ -7,22 +7,16 @@ using UnityEngine;
 public class NpcQuest : MonoBehaviour
 {
     public GameObject player;
-    float range = 3f;    
+    float range = 3f;
     float dist;
     Quaternion tor;
-    // Start is called before the first frame update
+    
     void Start()
-    {        
-        tor = transform.rotation;
-    }
-
-    // Update is called once per frame
-    void Update()
     {
-        //if (colls != null)
-        //{
-        //    LookAtPlayer();
-        //}
+        tor = transform.rotation;
+    }    
+    void Update()
+    {        
         dist = Vector3.Distance(transform.position, player.transform.position);
         if (dist < range)
         {
@@ -43,12 +37,4 @@ public class NpcQuest : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, range);
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.transform.tag == "Player")
-    //    {
-    //        Quaternion rot = Quaternion.LookRotation(-collision.transform.forward);
-    //        transform.rotation = rot;
-    //    }
-    //}
 }
