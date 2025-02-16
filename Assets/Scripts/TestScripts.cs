@@ -7,13 +7,14 @@ using UnityEngine.Animations.Rigging;
 using Unity.VisualScripting;
 using System;
 
+//마우스 이동 스크립트
 public class TestScripts : MonoBehaviour
 {
     Vector3 Pos;
     Vector3 dir;
     Quaternion lookTarget;
     public float moveSpeed = 5f;
-    bool isMoveable = false;    
+    bool isMoveable = false;
 
     private void Start()
     {
@@ -32,7 +33,6 @@ public class TestScripts : MonoBehaviour
 
     void Move()
     {
-
         transform.position += dir.normalized * Time.deltaTime * moveSpeed;
         transform.rotation = Quaternion.Lerp(transform.rotation, lookTarget, 0.25f);
         float dt = Vector3.Distance(transform.position, Pos);
