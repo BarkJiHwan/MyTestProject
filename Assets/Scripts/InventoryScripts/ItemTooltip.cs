@@ -37,7 +37,7 @@ public class ItemTooltip : MonoBehaviour
 
         itemNameText.text = itemInfo.name;
 
-        itemDescriptionText.text = itemInfo.description;
+        itemDescriptionText.text = itemInfo.itemDescription;
         itemImage.sprite = itemInfo.itemSprite;
         
         //damages.text = itemInfo.damages.ToString();

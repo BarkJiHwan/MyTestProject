@@ -32,7 +32,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (itemInfo != null)
         {
-            switch (itemInfo.type)
+            switch (itemInfo.itemType)
             {
                 case ItemType.EquipItem:                                      
                     itemTooltip.ShowTooltip(itemInfo);
@@ -46,7 +46,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (itemInfo != null)
         {
-            switch (itemInfo.type)
+            switch (itemInfo.itemType)
             {
                 case ItemType.EquipItem:
                     itemTooltip.HideTooltip();

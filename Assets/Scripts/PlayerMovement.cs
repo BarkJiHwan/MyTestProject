@@ -54,4 +54,11 @@ public class PlayerMovement : MonoBehaviour
             isMoveable = false;
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Item")
+        {
+
+        }
+    }
 }

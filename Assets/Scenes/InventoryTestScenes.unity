@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3087,7 +3087,7 @@ GameObject:
   - component: {fileID: 143247155}
   - component: {fileID: 143247154}
   m_Layer: 5
-  m_Name: Extra_IitemSlot
+  m_Name: MiscItem_IitemSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5273,7 +5273,7 @@ GameObject:
   - component: {fileID: 245132568}
   - component: {fileID: 245132567}
   m_Layer: 5
-  m_Name: QusetButton
+  m_Name: QuestButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11071,7 +11071,7 @@ GameObject:
   - component: {fileID: 532009515}
   - component: {fileID: 532009514}
   m_Layer: 5
-  m_Name: Quset_IitemSlot
+  m_Name: Quest_IitemSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35764,7 +35764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2a78f7e22ea504f9bab721b082445c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInfo: {fileID: 11400000, guid: 281fe661adbd64a4d88a7c658c84e8bf, type: 2}
+  itemInfo: {fileID: 11400000, guid: 0263cf8197644b34c8254dffc3005949, type: 2}
   image: {fileID: 1739691304}
   itemTooltip: {fileID: 1566975837}
 --- !u!1 &1898037857
@@ -38955,7 +38955,7 @@ GameObject:
   - component: {fileID: 2041716052}
   - component: {fileID: 2041716051}
   m_Layer: 5
-  m_Name: Extra_IitemButton
+  m_Name: MiscItem_IitemButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39283,7 +39283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2a78f7e22ea504f9bab721b082445c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInfo: {fileID: 11400000, guid: 281fe661adbd64a4d88a7c658c84e8bf, type: 2}
+  itemInfo: {fileID: 11400000, guid: 0263cf8197644b34c8254dffc3005949, type: 2}
   image: {fileID: 1739691304}
   itemTooltip: {fileID: 1566975837}
 --- !u!1 &2069595470
