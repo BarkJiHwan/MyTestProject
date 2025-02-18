@@ -34,12 +34,12 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             switch (itemInfo.itemType)
             {
-                case ItemType.EquipItem:                                      
+                case ItemType.EquipItem:
                     itemTooltip.ShowTooltip(itemInfo);
                     break;
             }
         }
-        itemTooltip.transform.position = eventData.position;        
+        itemTooltip.transform.position = eventData.position;
     }
 
     public void OnPointerExit(PointerEventData eventData)

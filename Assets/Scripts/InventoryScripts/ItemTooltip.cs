@@ -1,66 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemTooltip : MonoBehaviour
 {
     public Text itemNameText;
+    public Text itemTypeText;
     public Text itemDescriptionText;
     public Image itemImage;
-
-    public Text damages;
-    public Text defense;
-    public Text Hp;
-    public Text Mp;
-
-    public Text Allstate;
-    public Text Str;
-    public Text Dex;
-    public Text Con;
-    public Text Int;
-    public Text Wis;
-    public Text Luk;
-
-    public Text HpRecovery;
-    public Text MpRecovery;
-
-    public Text FireResi;
-    public Text ColdResi;
-    public Text LightResi;
-
     public Text Price;
+    public Text equipItemText;
 
+    private StringBuilder stateBuilder;
 
+    private void Start()
+    {
+        stateBuilder = new StringBuilder();
+        
+}
     public void ShowTooltip(ItemInfo itemInfo)
     {
-
         itemNameText.text = itemInfo.name;
-
-        itemDescriptionText.text = itemInfo.itemDescription;
+        itemTypeText.text = itemInfo.itemType.ToString();
+        itemDescriptionText.text = "아이템 설명\n" + itemInfo.itemDescription;
         itemImage.sprite = itemInfo.itemSprite;
+        Price.text = itemInfo.price.ToString();
         
-        //damages.text = itemInfo.damages.ToString();
-        //defense.text = itemInfo.defense.ToString();
-        //Hp;
-        //Mp;
+        stateBuilder.Length = 0;
 
-        //Allstate;
-        //Str;
-        //Dex;
-        //Con;
-        //Int;
-        //Wis;
-        //Luk;
+        if (itemInfo is EquipItem equipItem)
+        { 
+            Dictionary<string, int> equipmentStats = equipItem.EquipItemStats();
+            foreach (var stat in equipmentStats)
+            {
+                stateBuilder.AppendLine($"{stat.Key}: {stat.Value}");
+            }
+        }
+        equipItemText.text = stateBuilder.ToString();
 
-        //HpRecovery;
-        //MpRecovery;
-
-        //FireResi;
-        //ColdResi;
-        //LightResi;
-
-        //Price;
         gameObject.SetActive(true);
         gameObject.GetComponent<Image>().raycastTarget = false;
         SetRaycastTargetForAllChildren(gameObject, false);

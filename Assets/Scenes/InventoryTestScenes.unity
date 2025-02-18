@@ -5909,7 +5909,7 @@ GameObject:
   - component: {fileID: 255823041}
   - component: {fileID: 255823040}
   m_Layer: 5
-  m_Name: Text (Legacy) (5)
+  m_Name: itemDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5931,8 +5931,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 228.7, y: -610.7}
-  m_SizeDelta: {x: 434.5, y: 116.7131}
+  m_AnchoredPosition: {x: 228.7, y: -587.5017}
+  m_SizeDelta: {x: 434.5, y: 163.1097}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255823040
 MonoBehaviour:
@@ -5967,7 +5967,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC544\uC774\uD15C \uC124\uBA85 : "
+  m_Text: "\uC544\uC774\uD15C \uC124\uBA85"
 --- !u!222 &255823041
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6222,7 +6222,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD55C\uC190\uAC80"
+  m_Text: "\uD0C0\uC785"
 --- !u!222 &283229798
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30581,7 +30581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1566975834
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30660,26 +30660,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf55131f269d8d4a820d4fc3c9bcdec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemNameText: {fileID: 283229797}
-  itemDescriptionText: {fileID: 1857182843}
+  itemNameText: {fileID: 1989191499}
+  itemTypeText: {fileID: 283229797}
+  itemDescriptionText: {fileID: 255823040}
   itemImage: {fileID: 1739691304}
-  damages: {fileID: 0}
-  defense: {fileID: 0}
-  Hp: {fileID: 0}
-  Mp: {fileID: 0}
-  Allstate: {fileID: 0}
-  Str: {fileID: 0}
-  Dex: {fileID: 0}
-  Con: {fileID: 0}
-  Int: {fileID: 0}
-  Wis: {fileID: 0}
-  Luk: {fileID: 0}
-  HpRecovery: {fileID: 0}
-  MpRecovery: {fileID: 0}
-  FireResi: {fileID: 0}
-  ColdResi: {fileID: 0}
-  LightResi: {fileID: 0}
-  Price: {fileID: 0}
+  Price: {fileID: 1741394584}
+  equipItemText: {fileID: 1646705722}
 --- !u!1 &1571388131
 GameObject:
   m_ObjectHideFlags: 0
@@ -31791,8 +31777,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 228.7, y: -391.56442}
-  m_SizeDelta: {x: 434.5, y: 303.1288}
+  m_AnchoredPosition: {x: 228.7, y: -368.61884}
+  m_SizeDelta: {x: 434.5, y: 257.2376}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1646705722
 MonoBehaviour:
@@ -31834,8 +31820,7 @@ MonoBehaviour:
     \uC624\uB985\uB2C8\uB2E4~\n\uC5B4\uB5A4 \uB2A5\uB825\uCE58\uAC00 \uC624\uB985\uB2C8\uB2E4~\n\uC5B4\uB5A4
     \uB2A5\uB825\uCE58\uAC00 \uC624\uB985\uB2C8\uB2E4~\n\uC5B4\uB5A4 \uB2A5\uB825\uCE58\uAC00
     \uC624\uB985\uB2C8\uB2E4~\n\uC5B4\uB5A4 \uB2A5\uB825\uCE58\uAC00 \uC624\uB985\uB2C8\uB2E4~\n\uC5B4\uB5A4
-    \uB2A5\uB825\uCE58\uAC00 \uC624\uB985\uB2C8\uB2E4~\n\uC5B4\uB5A4 \uB2A5\uB825\uCE58\uAC00
-    \uC624\uB985\uB2C8\uB2E4~\n\uC5B4\uB5A4 \uB2A5\uB825\uCE58\uAC00 \uC624\uB985\uB2C8\uB2E4~"
+    \uB2A5\uB825\uCE58\uAC00 \uC624\uB985\uB2C8\uB2E4~"
 --- !u!222 &1646705723
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33462,7 +33447,7 @@ GameObject:
   - component: {fileID: 1741394585}
   - component: {fileID: 1741394584}
   m_Layer: 5
-  m_Name: Text (Legacy) (7)
+  m_Name: Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34162,7 +34147,7 @@ GameObject:
   - component: {fileID: 1792586936}
   - component: {fileID: 1792586935}
   m_Layer: 5
-  m_Name: Text (Legacy) (6)
+  m_Name: Selling Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37709,7 +37694,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD14C\uC2A4\uD2B8 \uAC80"
+  m_Text: "\uC774\uB984"
 --- !u!222 &1989191500
 CanvasRenderer:
   m_ObjectHideFlags: 0

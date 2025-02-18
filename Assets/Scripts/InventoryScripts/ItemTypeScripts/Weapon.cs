@@ -4,16 +4,14 @@ using UnityEngine;
 
 public enum HandType
 { 
-    한손, 양손
+    Onehanded, Twohanded
 }
 public enum WeaponType
 { 
-    검, 
-    활, 
-    스태프 
+    Sword, Bow, Staff
 }
-[CreateAssetMenu(fileName = "New Weapon", menuName = "Items/Weapon")]
-public class Weapon : EquipItemItem
+[CreateAssetMenu(fileName = "New Weapon", menuName = "Items/1.Weapon", order = 1)]
+public class Weapon : EquipItem
 {
     public HandType handType;
     public WeaponType weaponType;
