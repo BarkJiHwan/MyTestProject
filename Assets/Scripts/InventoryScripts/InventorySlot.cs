@@ -7,38 +7,43 @@ using UnityEngine.EventSystems;
 public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public ItemInfo itemInfo;
-    public Image image;
     public ItemTooltip itemTooltip;
-    Transform panel;
 
+    private Transform panel;
+    private RawImage RawImage;
     private void Start()
     {
+        RawImage = gameObject.GetComponent<RawImage>();
         panel = transform.parent;
     }
     public void AddItem(ItemInfo newItem)
     {
         itemInfo = newItem;
-        image.sprite = itemInfo.itemSprite;
-        image.enabled = true;
+        RawImage.texture = newItem.itemSprite.texture;
+        RawImage.enabled = true;
     }
     public void ClearSlot()
     {
         itemInfo = null;
-        image.sprite = null;
-        image.enabled = false;
+        RawImage.texture = null;
+        RawImage.enabled = false;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (itemInfo != null)
-        {
-            switch (itemInfo.itemType)
-            {
-                case ItemType.EquipItem:
-                    itemTooltip.ShowTooltip(itemInfo);
-                    break;
-            }
-        }
+        //if (itemInfo != null)
+        //{
+        //    switch (itemInfo.itemType)
+        //    {
+        //        case ItemType.EquipItem:
+        //            itemTooltip.ShowTooltip(itemInfo);
+        //            break;
+        //        case ItemType.ConsumItem:
+        //            itemTooltip.ShowTooltip(itemInfo);
+        //            break;
+        //    }
+        //}
+        itemTooltip.ShowTooltip(itemInfo);
         itemTooltip.transform.position = eventData.position;
     }
 

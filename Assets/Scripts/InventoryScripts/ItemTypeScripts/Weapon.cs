@@ -10,7 +10,6 @@ public enum WeaponType
 { 
     Sword, Bow, Staff
 }
-[CreateAssetMenu(fileName = "New Weapon", menuName = "Items/1.Weapon", order = 1)]
 public class Weapon : EquipItem
 {
     public HandType handType;

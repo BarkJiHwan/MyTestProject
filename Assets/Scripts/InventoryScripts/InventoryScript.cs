@@ -12,7 +12,6 @@ public class InventoryScript : MonoBehaviour
     {
         inven.SetActive(false);
     }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
