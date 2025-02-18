@@ -13,7 +13,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private RawImage RawImage;
     private void Start()
     {
-        RawImage = gameObject.GetComponent<RawImage>();
+        RawImage = gameObject.GetComponent<RawImage>();        
         panel = transform.parent;
     }
     public void AddItem(ItemInfo newItem)

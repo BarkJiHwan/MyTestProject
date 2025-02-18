@@ -14,22 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   itemGrade: 0
-  name: 
-  itemDescription: 
-  price: 0
-  count: 0
-  itemSprite: {fileID: 0}
+  name: "\uBC29\uC5B4\uAD6C"
+  itemDescription: "\uD14C\uC2A4\uD2B8 \uBC29\uC5B4\uAD6C"
+  price: 3000
+  count: 1
+  requiredLevel: 5
+  requiredClass: 0
+  requiredStrength: 10
+  requiredDexterity: 20
+  requiredIntelligence: 15
+  requiredLuck: 12
+  itemSprite: {fileID: 21300000, guid: cd1d226a0093eb84691d59f5697e74fb, type: 3}
   AttackSpeed: 0
-  CriticalChance: 0
-  CriticalDamage: 0
-  Allstat: 0
-  Str: 0
-  Dex: 0
-  Int: 0
-  Luk: 0
-  armorType: 0
-  defense: 0
+  CriticalChance: 5
+  CriticalDamage: 15
+  Allstat: 5
+  Str: 10
+  Dex: 12
+  Int: 4
+  Luk: 5
+  armorType: 1
+  defense: 30
   moveSpeed: 0
-  resistance: 0
-  Hp: 0
-  Mp: 0
+  resistance: 10
+  Hp: 300
+  Mp: 200

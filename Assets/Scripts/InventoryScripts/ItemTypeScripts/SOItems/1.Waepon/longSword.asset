@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0791edbf3ff01c4192b0a9a4a70f82b, type: 3}
   m_Name: longSword
   m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 5474267026760447201, guid: ac22bad40de04ab4e8a150c4decc6cf8, type: 3}
   itemType: 0
   itemGrade: 0
   name: "\uB871\uC18C\uB4DC"
@@ -24,6 +25,7 @@ MonoBehaviour:
   requiredDexterity: 10
   requiredIntelligence: 10
   requiredLuck: 10
+  dropRate: 10000
   itemSprite: {fileID: 21300000, guid: c3be05f5440ab3642967e47c0bea416f, type: 3}
   AttackSpeed: 1
   CriticalChance: 5
@@ -33,7 +35,7 @@ MonoBehaviour:
   Dex: 10
   Int: 10
   Luk: 10
-  handType: 0
   weaponType: 0
+  handType: 0
   range: 2
   damage: 30

@@ -27,6 +27,7 @@ public enum JobType
 }     
 public class ItemInfo : ScriptableObject
 {
+    public GameObject itemPrefab;
     public ItemType itemType;
     public ItemGrade itemGrade;
     public string name;
@@ -39,21 +40,25 @@ public class ItemInfo : ScriptableObject
     public int requiredDexterity;
     public int requiredIntelligence;
     public int requiredLuck;
+    public float dropRate;
 
     public Sprite itemSprite;
     public virtual void ShowMyInfo(StringBuilder stateBuilder)
     {
-        stateBuilder.AppendLine($"Name: {name}");
-        stateBuilder.AppendLine($"Type: {itemType}");
-        stateBuilder.AppendLine($"Description: {itemDescription}");
-        stateBuilder.AppendLine($"Price: {price}");
-        stateBuilder.AppendLine($"Required: ");
+        //stateBuilder.AppendLine($"Name: {name}");
+        //stateBuilder.AppendLine($"Type: {itemType}");
+        //stateBuilder.AppendLine($"Description: {itemDescription}");
+        //stateBuilder.AppendLine($"Price: {price}");
+    }
+    public void ItemRequired(StringBuilder stateBuilder)
+    {
+        stateBuilder.AppendLine($"Required");
         stateBuilder.AppendLine($"Level: {requiredLevel}");
         stateBuilder.AppendLine($"Class: {requiredClass}");
-        stateBuilder.Append($"Str: {requiredStrength}");
-        stateBuilder.AppendLine($"Dex: {requiredDexterity}");
-        stateBuilder.Append($"Int: {requiredIntelligence}");
-        stateBuilder.AppendLine($"Luck: {requiredLuck}");
+        stateBuilder.Append($"Str: {requiredStrength} \t");
+        stateBuilder.Append($"Dex: {requiredDexterity} \t");
+        stateBuilder.Append($"Int: {requiredIntelligence} \t");
+        stateBuilder.Append($"Luck: {requiredLuck} \t");
     }
 }
 

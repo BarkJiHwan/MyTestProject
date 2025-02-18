@@ -36,7 +36,7 @@ public class DragInterface : MonoBehaviour, IBeginDragHandler,IDragHandler , IEn
             transform.SetParent(panel);
         }
         HasEnteredPanel();
-    }    
+    }
 
     public bool IsDroppedOnUI(PointerEventData eventData)
     {

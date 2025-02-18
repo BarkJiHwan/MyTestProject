@@ -17,15 +17,14 @@ public class EquipItem : ItemInfo
         
     public override void ShowMyInfo(StringBuilder stateBuilder)
     {
-        base.ShowMyInfo(stateBuilder);
         stateBuilder.AppendLine($"Attack Speed: {AttackSpeed}");
         stateBuilder.AppendLine($"Critical Chance: {CriticalChance}");
         stateBuilder.AppendLine($"Critical Damage: {CriticalDamage}");
         stateBuilder.AppendLine($"All Stat: {Allstat}");
-        stateBuilder.AppendLine($"Strength: {Str}");
-        stateBuilder.AppendLine($"Dexterity: {Dex}");
-        stateBuilder.AppendLine($"Intelligence: {Int}");
-        stateBuilder.AppendLine($"Luck: {Luk}");
+        stateBuilder.AppendLine($"Str: {Str}");
+        stateBuilder.AppendLine($"Dex: {Dex}");
+        stateBuilder.AppendLine($"Int: {Int}");
+        stateBuilder.AppendLine($"Luk: {Luk}");
     }
 }
 

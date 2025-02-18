@@ -17,6 +17,7 @@ public class Armor : EquipItem
     public int Mp;
     public override void ShowMyInfo(StringBuilder stateBuilder)
     {
+        base.ShowMyInfo(stateBuilder);
         stateBuilder.AppendLine($"Armor Type: {armorType}");
         stateBuilder.AppendLine($"Defense: {defense}");
         stateBuilder.AppendLine($"Move Speed: {moveSpeed}");

@@ -33,24 +33,23 @@ public class ItemTooltip : MonoBehaviour
     public void ShowTooltip(ItemInfo itemInfo)
     {
         stateBuilder.Length = 0;//툴팁이 호출되기 전 값을 0으로 초기화
+        RequiredBuilder.Length = 0;
         //다형성을 통해 버츄얼로 만든 메소드를 오버라이드를 통해 값을 가져옴
-        itemInfo.ShowMyInfo(stateBuilder);
-        itemInfo.ShowMyInfo(RequiredBuilder);
         itemTypeText.text = itemInfo.itemType.ToString();
         itemGradeText.text = itemInfo.itemGrade.ToString();
         itemNameText.text = itemInfo.name;
         itemDescriptionText.text = "아이템 설명\n" + itemInfo.itemDescription;
         Price.text = itemInfo.price.ToString();
 
+        itemInfo.ItemRequired(RequiredBuilder);
+        itemInfo.ShowMyInfo(stateBuilder);
+        
+        itemImage.sprite = itemInfo.itemSprite;                
         RequiredText.text = RequiredBuilder.ToString();
-        itemImage.sprite = itemInfo.itemSprite;
-
-        //if (itemInfo is EquipItem equipItem || itemInfo is Armor armor || itemInfo is ConsumItem consumItem)
-        //{
-        //    itemInfo.ShowMyInfo(stateBuilder);
-        //    equipItemText.text = stateBuilder.ToString();
-        //}
-        equipItemText.text = stateBuilder.ToString();
+        if (itemInfo is EquipItem equipItem || itemInfo is Armor armor || itemInfo is ConsumItem consumItem)
+        {
+            equipItemText.text = stateBuilder.ToString();
+        }        
 
         gameObject.SetActive(true);
         gameObject.GetComponent<Image>().raycastTarget = false;
