@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ItemFactory
 {
-    public static T CreateItem<T>(T itemTemplate) where T : ItemInfo
+    public static IItemProduct CreateItem(ItemInfo itemInfo)
     {
-        T newItem = ScriptableObject.Instantiate(itemTemplate);
-        return newItem;
+        GameObject itemObject = new GameObject(itemInfo.name);
+        ItemProduct itemProduct = itemObject.AddComponent<ItemProduct>();
+        itemProduct.SetInitialize(itemInfo);
+        return itemProduct;
+
     }
 }
-

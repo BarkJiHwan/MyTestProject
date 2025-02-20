@@ -10,7 +10,7 @@ public class InventoryScript : MonoBehaviour
 
     private void Start()
     {
-        inven.SetActive(false);
+        //inven.SetActive(false);
     }
     private void Update()
     {

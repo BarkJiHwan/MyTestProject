@@ -24,7 +24,8 @@ public enum JobType
     Warrior,
     Archer,
     Mage
-}     
+}
+[System.Serializable]
 public class ItemInfo : ScriptableObject
 {
     public GameObject itemPrefab;
